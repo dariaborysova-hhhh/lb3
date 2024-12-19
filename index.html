@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерактивна сторінка</title>
+    <style>
+        body {
+            transition: background-color 1s;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            width: 10%;
+            height: 40px;
+            text-align: center;
+        }
+        .odd {
+            background-color: #f0f0f0;
+        }
+        .even {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div id="modal-overlay" class="modal-overlay"></div>
+    <div id="modal" class="modal">
+        <label for="interval">Введіть інтервал зміни зображень (в секундах):</label>
+        <input type="number" id="interval" value="5">
+        <button onclick="startImageChange()">Застосувати</button>
+    </div>
+
+    <h2>Зміна зображень та оформлення залежно від часу доби</h2>
+    <div id="image-container">
+        <img id="image" src="https://i.pinimg.com/736x/63/1d/94/631d945ad758b0d1778fa30c2f89c8e3.jpg" alt="Image" width="300">
+    </div>
+
+    <h2>Таблиця з випадковими числами</h2>
+    <label for="min-value">Мінімальне значення:</label>
+    <input type="number" id="min-value" value="0">
+    <label for="max-value">Максимальне значення:</label>
+    <input type="number" id="max-value" value="100">
+    <button onclick="generateTable()">Створити таблицю</button>
+
+    <div id="table-container"></div>
+
+   
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
